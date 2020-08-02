@@ -20,9 +20,14 @@ class A {
 
 The existence of one pure virtual member function in a class makes that class a **virtual base class**. A class with only pure virtual member functions is a **pure virtual base class**, or, an **interface**. Virtual base classes cannot be instantiated as is: they need to be inherited from and then have their pure virtual member functions implemented.[4](#fn4)
 
+## Editorialization
+
+Make `virtual` methods private. Derived classes can override private member functions while preserving a stable interface. The destructor is an exception because of aforementioned slicing issues.
+
 ## Resources
-https://isocpp.org/wiki/faq/virtual-functions#virtual-ctors
-http://www.gotw.ca/publications/mill18.htm
+- https://isocpp.org/wiki/faq/virtual-functions#virtual-ctors
+- http://www.gotw.ca/publications/mill18.htm
+- https://www.drdobbs.com/conversations-virtually-yours/184403760
 
 ### Footnotes:
 
