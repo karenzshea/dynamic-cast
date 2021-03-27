@@ -92,7 +92,12 @@ remove_reference inside of an add reference??)
 > Converts any type T to a reference type, making it possible to use member functions in decltype expressions without the need to go through constructors. 
 
 # 5. std::enable_if
-You can use `enable_if` to cleverly "turn on/off" template functions based on properties of the template arguments. 
+We can use `enable_if` to tell the compiler to conditionally generate template code,
+depending on properties of the template arguments passed into the template code.
+The effect is cleverly turning template functions "on/off", based on which types
+they are called with.
+
+The implementation of `enable_if` might look like this:
 
 ```c
 template< bool B, class T = void >
